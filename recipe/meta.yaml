@@ -6,7 +6,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/langchain_voyageai-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/langchain_voyageai-{{ version }}.tar.gz
   sha256: afe43b495db85b0b6792473b45791697135da65b1a9d00581233af2675e360fb
 
 build:
