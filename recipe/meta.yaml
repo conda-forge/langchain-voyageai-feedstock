@@ -6,21 +6,21 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/langchain_voyageai-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/langchain_voyageai-{{ version }}.tar.gz
   sha256: 5a0d9b4b2c53fe9e0a45ee9d0ef37f7baddf6f98cc1b0c72aceb0b692a663298
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 0
+  number: 1
 
 requirements:
   host:
-    - python >=3.8,<4.0
+    - python {{ python_min }}
     - poetry-core >=1.0.0
     - pip
   run:
-    - python >=3.8.1,<4.0
+    - python >={{ python_min }},<4.0
     - langchain-core >=0.1.52,<0.3
     - voyageai >=0.2.1,<1
 
@@ -31,6 +31,7 @@ test:
     - pip check
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/langchain-ai/langchain
