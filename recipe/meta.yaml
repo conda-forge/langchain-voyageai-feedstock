@@ -1,5 +1,5 @@
 {% set name = "langchain-voyageai" %}
-{% set version = "0.1.6" %}
+{% set version = "0.1.7" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/langchain_voyageai-{{ version }}.tar.gz
-  sha256: 45f4f6de51b094328e6e2799b3673fc7069b532b4af0d308d1b5bc89920c59db
+  sha256: e9f16a24589122c3a71ad0d46ea330d3dc00ad89b48f4cb5094c87f434cb8d8e
 
 build:
   noarch: python
@@ -23,7 +23,7 @@ requirements:
     - pydantic <3,>=2
     - python >={{ python_min }},<4.0
     - langchain-core <1.0.0,>=0.3.29
-    - voyageai <1,>=0.3.2
+    - voyageai <1,>=0.3.4
 
 test:
   imports:
