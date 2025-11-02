@@ -1,5 +1,5 @@
 {% set name = "langchain-voyageai" %}
-{% set version = "0.1.7" %}
+{% set version = "0.2.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/langchain_voyageai-{{ version }}.tar.gz
-  sha256: e9f16a24589122c3a71ad0d46ea330d3dc00ad89b48f4cb5094c87f434cb8d8e
+  sha256: e1babef95e12238f806792e34a7362de24ec7ea986a25d901a20ebe2e484477e
 
 build:
   noarch: python
