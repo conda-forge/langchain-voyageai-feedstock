@@ -1,0 +1,46 @@
+schema_version: 1
+
+context:
+  name: langchain-voyageai
+  version: "0.3.3"
+
+package:
+  name: ${{ name|lower }}
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/langchain_voyageai-${{ version }}.tar.gz
+  sha256: 616eac5e1e58ce6caf8d4f2a3bd5fbf599e56080bea2b14fe019a253901e7e15
+
+build:
+  number: 1
+  noarch: python
+  script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+
+requirements:
+  host:
+    - python ${{ python_min }}.*
+    - pdm-backend
+    - pip
+  run:
+    - pydantic <3,>=2
+    - python >=${{ python_min }},<4.0
+    - langchain-core >=1.0.0
+    - voyageai <1,>=0.3.7
+
+tests:
+  - python:
+      imports:
+        - langchain_voyageai
+      pip_check: true
+      python_version: ${{ python_min }}
+
+about:
+  summary: An integration package connecting VoyageAI and LangChain
+  license: MIT
+  license_file: LICENSE
+  homepage: https://github.com/langchain-ai/langchain
+
+extra:
+  recipe-maintainers:
+    - jan-janssen
