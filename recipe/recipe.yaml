@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: langchain-voyageai
-  version: "0.3.3"
+  version: 0.4.0
 
 package:
   name: ${{ name|lower }}
@@ -10,10 +10,10 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/langchain_voyageai-${{ version }}.tar.gz
-  sha256: 616eac5e1e58ce6caf8d4f2a3bd5fbf599e56080bea2b14fe019a253901e7e15
+  sha256: 07cc420bdb07b9ac9d6a5e6264860a0b395e233f9e1260a065d9ba0baad594ec
 
 build:
-  number: 1
+  number: 0
   noarch: python
   script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
 
@@ -26,8 +26,7 @@ requirements:
     - pydantic <3,>=2
     - python >=${{ python_min }},<4.0
     - langchain-core >=1.0.0
-    - voyageai <1,>=0.3.7
-
+    - voyageai <1,>=0.4.1
 tests:
   - python:
       imports:
