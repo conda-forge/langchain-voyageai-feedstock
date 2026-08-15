@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: langchain-voyageai
-  version: 0.4.0
+  version: "0.4.1"
 
 package:
   name: ${{ name|lower }}
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/langchain_voyageai-${{ version }}.tar.gz
-  sha256: 07cc420bdb07b9ac9d6a5e6264860a0b395e233f9e1260a065d9ba0baad594ec
+  sha256: 294293b35f6973a965b521e51a1d1423d467921fc74ccfac2568ca92775201d1
 
 build:
   number: 0
